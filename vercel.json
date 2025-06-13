@@ -1,0 +1,14 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "outputDirectory": ".next",
+  "env": {
+    "GOOGLE_SHEETS_ID": "@google_sheets_id",
+    "GOOGLE_API_KEY": "@google_api_key",
+    "GOOGLE_SERVICE_ACCOUNT_EMAIL": "@google_service_account_email",
+    "GOOGLE_PRIVATE_KEY": "@google_private_key",
+    "GOOGLE_PRIVATE_KEY_ID": "@google_private_key_id",
+    "GOOGLE_CLIENT_ID": "@google_client_id"
+  }
+}
