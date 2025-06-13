@@ -26,7 +26,7 @@ interface PlayerStats {
 const PickleballScheduler = () => {
   const [players, setPlayers] = useState<string[]>([]);
   const [newPlayerName, setNewPlayerName] = useState('');
-  const [rounds, setRounds] = useState(3);
+  const [rounds, setRounds] = useState(8);
   const [availableCourts, setAvailableCourts] = useState(2);
   const [schedule, setSchedule] = useState<Round[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -648,7 +648,7 @@ return (
                     isGenerating || isUpdatingPlayers ? 'bg-gray-100 cursor-not-allowed' : 'cursor-pointer'
                   }`}
                 >
-                  {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
+                  {Array.from({ length: 12 }, (_, i) => i + 1).map(num => (
                     <option key={num} value={num}>{num} Round{num > 1 ? 's' : ''}</option>
                   ))}
                 </select>
@@ -666,7 +666,7 @@ return (
                     isGenerating || isUpdatingPlayers ? 'bg-gray-100 cursor-not-allowed' : 'cursor-pointer'
                   }`}
                 >
-                  {Array.from({ length: 10 }, (_, i) => i + 1).map(num => (
+                  {Array.from({ length: 8 }, (_, i) => i + 1).map(num => (
                     <option key={num} value={num}>{num} Court{num > 1 ? 's' : ''}</option>
                   ))}
                 </select>
