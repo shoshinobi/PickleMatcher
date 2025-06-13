@@ -521,12 +521,13 @@ return (
     <div className="max-w-6xl mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-8 px-4">
-        <h1 className="text-6xl md:text-8xl font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent drop-shadow-lg w-full max-w-4xl mx-auto" 
+        <h1 className="font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent drop-shadow-lg w-full max-w-4xl mx-auto"
             style={{ 
               filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3))',
               fontFamily: 'Roboto Flex, Roboto, system-ui, -apple-system, sans-serif',
               fontWeight: '900',
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              fontSize: 'clamp(2.5rem, 8vw, 6rem)' // Responsive font size
             }}>
           PickleMatcher
         </h1>
