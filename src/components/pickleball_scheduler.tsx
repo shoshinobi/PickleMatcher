@@ -516,35 +516,36 @@ const PickleballScheduler = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-8" style={{ fontFamily: 'Roboto Flex, Roboto, system-ui, -apple-system, sans-serif' }}>
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent drop-shadow-lg" 
-              style={{ 
-                filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3))',
-                fontFamily: 'Roboto Flex, Roboto, system-ui, -apple-system, sans-serif',
-                fontWeight: '800'
-              }}>
-            PickleMatcher
-          </h1>
-          <p className="text-gray-600 mb-4" style={{ fontFamily: 'Roboto, system-ui, -apple-system, sans-serif' }}>
-            The smart way to schedule your pickleball league
-          </p>
-          
-          {/* Help Button */}
-          <div className="mb-4">
-            <button
-              onClick={() => setShowHelpModal(true)}
-              className="inline-flex items-center px-4 py-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer border border-blue-200 hover:border-blue-300"
-              title="Help & Getting Started"
-            >
-              <HelpCircle className="w-5 h-5 mr-2" />
-              Help
-            </button>
-          </div>
+return (
+  <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-8" style={{ fontFamily: 'Roboto Flex, Roboto, system-ui, -apple-system, sans-serif' }}>
+    <div className="max-w-6xl mx-auto px-4">
+      {/* Header */}
+      <div className="text-center mb-8 px-4">
+        <h1 className="text-6xl md:text-8xl font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent drop-shadow-lg w-full max-w-4xl mx-auto" 
+            style={{ 
+              filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3))',
+              fontFamily: 'Roboto Flex, Roboto, system-ui, -apple-system, sans-serif',
+              fontWeight: '900',
+              letterSpacing: '-0.02em'
+            }}>
+          PickleMatcher
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 mb-4 font-medium" style={{ fontFamily: 'Roboto, system-ui, -apple-system, sans-serif' }}>
+          Where pickleball meets its perfect match! 🏓
+        </p>
+        
+        {/* Help Button */}
+        <div className="mb-4">
+          <button
+            onClick={() => setShowHelpModal(true)}
+            className="inline-flex items-center px-4 py-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer border border-blue-200 hover:border-blue-300"
+            title="Help & Getting Started"
+          >
+            <HelpCircle className="w-5 h-5 mr-2" />
+            Help
+          </button>
         </div>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Player Management */}
@@ -990,13 +991,20 @@ const PickleballScheduler = () => {
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">📋 What This App Does</h4>
                 <p className="text-gray-700 mb-3">
                   PickleMatcher creates fair, randomized match schedules for your pickleball league. 
-                  It ensures equal playing time, avoids repeated partnerships, tracks win/loss statistics, and syncs everything in real-time via Google Sheets.
+                  It ensures equal playing time, avoids repeated partnerships, tracks win/loss statistics, and syncs everything in real-time.
                 </p>
                 <div className="bg-blue-50 p-3 rounded-md">
                   <p className="text-blue-800 text-sm">
-                    <strong>✨ Key Features:</strong> Smart team mixing • Equal playing time • Live win/loss tracking • Real-time multi-user sync • Visible stats in Google Sheets
+                    <strong>✨ Key Features:</strong> Smart team mixing • Equal playing time • Live win/loss tracking • Real-time sync for all users
                   </p>
                 </div>
+              </div>
+
+              {/* Important Warning */}
+              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+                <p className="text-yellow-800 text-sm">
+                  <strong>⚠️ Important:</strong> This app should only be used by one group at a time. Clearing players or generating a new schedule will affect what everyone sees. Coordinate with your group before making major changes.
+                </p>
               </div>
 
               {/* Quick Start */}
@@ -1027,28 +1035,28 @@ const PickleballScheduler = () => {
                 </div>
               </div>
 
-              {/* Detailed Features */}
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">🎯 How It Works</h4>
-                <div className="space-y-4">
-                  <div>
-                    <strong className="text-gray-900">Smart Team Generation:</strong>
-                    <p className="text-gray-600 text-sm">The algorithm ensures players don&apos;t partner with the same person repeatedly and that everyone gets equal playing time.</p>
-                  </div>
-                  <div>
-                    <strong className="text-gray-900">Court Management:</strong>
-                    <p className="text-gray-600 text-sm">Set your available courts to limit simultaneous matches. Players not playing will sit out that round.</p>
-                  </div>
-                  <div>
-                    <strong className="text-gray-900">Win/Loss Tracking:</strong>
-                    <p className="text-gray-600 text-sm">Click &ldquo;Winner&rdquo; buttons to record match results. Stats are automatically saved and visible in the Google Sheets &ldquo;Stats&rdquo; tab.</p>
-                  </div>
-                  <div>
-                    <strong className="text-gray-900">Real-Time Sync:</strong>
-                    <p className="text-gray-600 text-sm">All data syncs automatically every 10 seconds. Multiple users see the same schedule and stats in real-time.</p>
-                  </div>
-                </div>
-              </div>
+{/* Detailed Features */}
+<div className="mb-6">
+  <h4 className="text-lg font-semibold text-gray-900 mb-3">🎯 How It Works</h4>
+  <div className="space-y-4">
+    <div>
+      <strong className="text-gray-900">Smart Team Generation:</strong>
+      <p className="text-gray-600 text-sm">The algorithm ensures players don&apos;t partner with the same person repeatedly and that everyone gets equal playing time.</p>
+    </div>
+    <div>
+      <strong className="text-gray-900">Court Management:</strong>
+      <p className="text-gray-600 text-sm">Set your available courts to limit simultaneous matches. Players not playing will sit out that round.</p>
+    </div>
+    <div>
+      <strong className="text-gray-900">Win/Loss Tracking:</strong>
+      <p className="text-gray-600 text-sm">Click &ldquo;Winner&rdquo; buttons to record match results. Stats are automatically saved and visible in the Player Game Distribution & Stats area.</p>
+    </div>
+    <div>
+      <strong className="text-gray-900">Real-Time Updates:</strong>
+      <p className="text-gray-600 text-sm">All changes are saved automatically and visible to everyone using the app in real-time.</p>
+    </div>
+  </div>
+</div>
 
               {/* Tips */}
               <div className="mb-6">
@@ -1060,7 +1068,7 @@ const PickleballScheduler = () => {
                     <li>• <strong>Adding Players:</strong> You can add players even after generating a schedule</li>
                     <li>• <strong>Court Strategy:</strong> Use fewer courts to ensure everyone plays more often</li>
                     <li>• <strong>Fair Play:</strong> The algorithm prioritizes players who have played fewer games</li>
-                    <li>• <strong>Stats Tracking:</strong> Win/loss statistics are visible in the &ldquo;Stats&rdquo; sheet in Google Sheets</li>
+                    <li>• <strong>Stats Tracking:</strong> Win/loss statistics are tracked and visible</li>
                     <li>• <strong>Clear All:</strong> Clearing all players also resets the schedule and all statistics</li>
                   </ul>
                 </div>
@@ -1083,9 +1091,9 @@ const PickleballScheduler = () => {
                     <p className="text-gray-600">A: Everyone can access the same URL and see real-time updates. The app syncs every 10 seconds automatically.</p>
                   </div>
                   <div>
-                    <strong className="text-gray-900">Q: Where can I see player statistics?</strong>
-                    <p className="text-gray-600">A: Open your Google Sheet and click on the &ldquo;Stats&rdquo; tab to see wins, losses, and win percentages for all players.</p>
-                  </div>
+  <strong className="text-gray-900">Q: Where can I see player statistics?</strong>
+  <p className="text-gray-600">A: Statistics are displayed in the app after each match. View win percentages in the Player Game Distribution section below the schedule.</p>
+</div>
                   <div>
                     <strong className="text-gray-900">Q: Why does the winner selection sometimes need two clicks?</strong>
                     <p className="text-gray-600">A: The app syncs data every 10 seconds. If you click right before a sync, wait a moment and click again. Your selection will save properly.</p>
